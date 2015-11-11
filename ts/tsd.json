@@ -7,6 +7,9 @@
   "installed": {
     "node/node.d.ts": {
       "commit": "efa0c1196d7280640e624ac1e7fa604502e7bd63"
+    },
+    "colors/colors.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
     }
   }
 }
