@@ -2,8 +2,8 @@
 an easy wrapper for nodegit
 
 ### Buildstatus/Dependencies
-[![Build Status](https://travis-ci.org/pushrocks/gulp-bootstrap.svg?branch=master)](https://travis-ci.org/pushrocks/gulp-bootstrap)
-[![devDependency Status](https://david-dm.org/pushrocks/gulp-bootstrap/dev-status.svg)](https://david-dm.org/pushrocks/gulp-bootstrap#info=devDependencies)
+[![Build Status](https://travis-ci.org/pushrocks/smartgit.svg?branch=master)](https://travis-ci.org/pushrocks/smartgit)
+[![devDependency Status](https://david-dm.org/pushrocks/smartgit/dev-status.svg)](https://david-dm.org/pushrocks/smartgit#info=devDependencies)
 
 ### Usage
 This npm package comes with everything you need to start your own gulp plugin.

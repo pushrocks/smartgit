@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '4.2.4'
 before_install:
-- sudo apt-get dist-upgrade
+- sudo apt-get dist-upgrade -y
 deploy:
   provider: npm
   email: npm@lossless.digital
