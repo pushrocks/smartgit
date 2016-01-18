@@ -4,7 +4,7 @@
   "description": "an easy wrapper for nodegit",
   "main": "index.js",
   "scripts": {
-    "test": "(cd ts/compile && node compile.js) && (node test.js)",
+    "test": "(npmts) && (node test.js)",
     "reinstall": "(rm -r node_modules && npm install)",
     "release": "(git pull origin master && npm version patch && git push origin master && git checkout release && git merge master && git push origin release && git checkout master)",
     "startdev": "(git checkout master && git pull origin master)"
@@ -25,13 +25,11 @@
   },
   "homepage": "https://github.com/pushrocks/smartgit",
   "dependencies": {
-    "beautylog": "^1.0.2",
-    "nodegit": "^0.5.0",
-    "q": "^1.4.1"
+    "beautylog": "2.0.2",
+    "nodegit": "0.8.0",
+    "q": "1.4.1"
   },
   "devDependencies": {
-    "gulp": "3.9.0",
-    "gulp-typescript": "2.9.2",
-    "pushrocks": "^1.0.20"
+    "npmts": "1.0.3"
   }
 }

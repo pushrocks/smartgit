@@ -1,30 +1,24 @@
 /// <reference path="./index.ts" />
 module SmartgitClone {
     export function init() {
-        var clone = function(cloneURL:string = "undefined" ,dest:string = "undefined"){
+        var clone = function(options){
 
             /***** URL Checks ******/
-            if (cloneURL == "undefined" || dest == "undefined") {
+            if (options.from == "undefined" || options.to == "undefined") {
                 plugins.beautylog.error("smartgit.clone".blue + " : Something is strange about the way you invoked the function");
                 return;
             }
 
             /***** Path Checks ******/
-            if (!/^\/.*/.test(dest)){ //check wether path is absolute
-                plugins.beautylog.error("It seems that the given path " + dest + " is not absolute.");
+            if (!/^\/.*/.test(options.to)){ //check wether path is absolute
+                plugins.beautylog.error("It seems that the given path " + options.to + " is not absolute.");
                 return;
             }
 
 
-            plugins.beautylog.log("Now cloning " + cloneURL);
+            plugins.beautylog.log("Now cloning " + options.from);
             var cloneOptions:any = {};
-            cloneOptions.remoteCallbacks = {
-                certificateCheck: function() { return 1; },
-                credentials: function(url, userName) {
-                    return plugins.nodegit.Cred.sshKeyFromAgent(userName);
-                }
-            };
-            var cloneRepository = plugins.nodegit.Clone(cloneURL, dest, cloneOptions);
+            var cloneRepository = plugins.nodegit.Clone(options.from, options.to, cloneOptions);
             smartgit.check(cloneRepository);
         };
 
