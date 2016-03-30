@@ -1,0 +1,33 @@
+{
+  "name": "smartgit",
+  "version": "0.0.7",
+  "description": "an easy wrapper for nodegit",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "(npmts)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pushrocks/smartgit.git"
+  },
+  "keywords": [
+    "json",
+    "jade",
+    "template"
+  ],
+  "author": "Smart Coordination GmbH <office@push.rocks> (https://push.rocks)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushrocks/smartgit/issues"
+  },
+  "homepage": "https://github.com/pushrocks/smartgit",
+  "dependencies": {
+    "beautylog": "3.1.2",
+    "nodegit": "0.12.1",
+    "q": "1.4.1"
+  },
+  "devDependencies": {
+    "npmts": "3.6.10",
+    "should": "^8.3.0"
+  }
+}

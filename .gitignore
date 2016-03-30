@@ -1,0 +1,13 @@
+node_modules/
+.settings/
+.idea/
+test/temp/
+coverage/
+docs/
+
+#npm devug
+npm-debug.log
+
+ts/*.js
+ts/*.js.map
+ts/typings/
