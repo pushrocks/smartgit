@@ -1,0 +1,10 @@
+"use strict";
+/// <reference path="./typings/main.d.ts" />
+var plugins = require("./smartgit.plugins");
+module.exports = function (pathArg, commitMessage) {
+    var result = plugins.nodegit.index.addByPath(pathArg);
+    if (result == 0) {
+    }
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNtYXJ0Z2l0LmNvbW1pdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsNENBQTRDO0FBQzVDLElBQU8sT0FBTyxXQUFXLG9CQUFvQixDQUFDLENBQUM7QUFFL0MsaUJBQVMsVUFBUyxPQUFjLEVBQUMsYUFBb0I7SUFDakQsSUFBSSxNQUFNLEdBQUcsT0FBTyxDQUFDLE9BQU8sQ0FBQyxLQUFLLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FBQyxDQUFDO0lBQ3RELEVBQUUsQ0FBQyxDQUFDLE1BQU0sSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDO0lBRWxCLENBQUM7QUFDTCxDQUFDLENBQUMiLCJmaWxlIjoic21hcnRnaXQuY29tbWl0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8vIDxyZWZlcmVuY2UgcGF0aD1cIi4vdHlwaW5ncy9tYWluLmQudHNcIiAvPlxuaW1wb3J0IHBsdWdpbnMgPSByZXF1aXJlKFwiLi9zbWFydGdpdC5wbHVnaW5zXCIpO1xuXG5leHBvcnQgPSBmdW5jdGlvbihwYXRoQXJnOnN0cmluZyxjb21taXRNZXNzYWdlOnN0cmluZykge1xuICAgIHZhciByZXN1bHQgPSBwbHVnaW5zLm5vZGVnaXQuaW5kZXguYWRkQnlQYXRoKHBhdGhBcmcpO1xuICAgIGlmIChyZXN1bHQgPT0gMCkge1xuICAgICAgICBcbiAgICB9XG59OyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

@@ -1,18 +1,16 @@
-/// <reference path="typings/tsd.d.ts" />
-/// <reference path="smartgit.plugins.ts" />
-/// <reference path="smartgit.clone.ts" />
-/// <reference path="smartgit.init.ts" />
-/// <reference path="smartgit.commit.ts" />
-/// <reference path="smartgit.check.ts" />
+/// <reference path="./typings/main.d.ts" />
 
-var plugins = SmartgitPlugins.init();
+import plugins = require("./smartgit.plugins");
+import SmartgitCheck = require("./smartgit.check");
+import SmartgitClone = require("./smartgit.clone");
+import SmartgitCommit = require("./smartgit.commit");
+import SmartgitInit = require("./smartgit.init");
 
-//Build the smartgit object
 var smartgit:any = {};
-smartgit.clone = SmartgitClone.init();
-smartgit.commit = SmartgitCommit.init();
-smartgit.check = SmartgitCheck.init();
-smartgit.init = SmartgitInit.init();
+smartgit.clone = SmartgitClone;
+smartgit.commit = SmartgitCommit;
+smartgit.check = SmartgitCheck;
+smartgit.init = SmartgitInit;
 
 
 module.exports = smartgit;

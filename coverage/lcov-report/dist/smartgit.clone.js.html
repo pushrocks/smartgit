@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dist/smartgit.clone.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">dist/</a> smartgit.clone.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.23% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.23% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>9/13</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+/// &lt;reference path="./typings/main.d.ts" /&gt;
+var plugins = require("./smartgit.plugins");
+var SmartgitCheck = require("./smartgit.check");
+module.exports = function (options) {
+    /***** URL Checks ******/
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (options.from == "undefined" || options.to == "undefined") {
+<span class="cstat-no" title="statement not covered" >        plugins.beautylog.error("smartgit.clone".blue + " : Something is strange about the way you invoked the function");</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+    }
+    /***** Path Checks ******/
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!/^\/.*/.test(options.to)) {
+<span class="cstat-no" title="statement not covered" >        plugins.beautylog.error("It seems that the given path " + options.to + " is not absolute.");</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+    }
+    plugins.beautylog.log("Now cloning " + options.from);
+    var cloneOptions = {};
+    var cloneRepository = plugins.nodegit.Clone(options.from, options.to, cloneOptions);
+    SmartgitCheck(cloneRepository);
+};
+&nbsp;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNtYXJ0Z2l0LmNsb25lLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSw0Q0FBNEM7QUFDNUMsSUFBTyxPQUFPLFdBQVcsb0JBQW9CLENBQUMsQ0FBQztBQUMvQyxJQUFPLGFBQWEsV0FBVyxrQkFBa0IsQ0FBQyxDQUFDO0FBRW5ELGlCQUFTLFVBQVMsT0FBTztJQUVyQix5QkFBeUI7SUFDekIsRUFBRSxDQUFDLENBQUMsT0FBTyxDQUFDLElBQUksSUFBSSxXQUFXLElBQUksT0FBTyxDQUFDLEVBQUUsSUFBSSxXQUFXLENBQUMsQ0FBQyxDQUFDO1FBQzNELE9BQU8sQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDLGdCQUFnQixDQUFDLElBQUksR0FBRyxnRUFBZ0UsQ0FBQyxDQUFDO1FBQ2xILE1BQU0sQ0FBQztJQUNYLENBQUM7SUFFRCwwQkFBMEI7SUFDMUIsRUFBRSxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFBLENBQUM7UUFDM0IsT0FBTyxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUMsK0JBQStCLEdBQUcsT0FBTyxDQUFDLEVBQUUsR0FBRyxtQkFBbUIsQ0FBQyxDQUFDO1FBQzVGLE1BQU0sQ0FBQztJQUNYLENBQUM7SUFHRCxPQUFPLENBQUMsU0FBUyxDQUFDLEdBQUcsQ0FBQyxjQUFjLEdBQUcsT0FBTyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ3JELElBQUksWUFBWSxHQUFPLEVBQUUsQ0FBQztJQUMxQixJQUFJLGVBQWUsR0FBRyxPQUFPLENBQUMsT0FBTyxDQUFDLEtBQUssQ0FBQyxPQUFPLENBQUMsSUFBSSxFQUFFLE9BQU8sQ0FBQyxFQUFFLEVBQUUsWUFBWSxDQUFDLENBQUM7SUFDcEYsYUFBYSxDQUFDLGVBQWUsQ0FBQyxDQUFDO0FBQ25DLENBQUMsQ0FBQyIsImZpbGUiOiJzbWFydGdpdC5jbG9uZS5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vLyA8cmVmZXJlbmNlIHBhdGg9XCIuL3R5cGluZ3MvbWFpbi5kLnRzXCIgLz5cbmltcG9ydCBwbHVnaW5zID0gcmVxdWlyZShcIi4vc21hcnRnaXQucGx1Z2luc1wiKTtcbmltcG9ydCBTbWFydGdpdENoZWNrID0gcmVxdWlyZShcIi4vc21hcnRnaXQuY2hlY2tcIik7XG5cbmV4cG9ydCA9IGZ1bmN0aW9uKG9wdGlvbnMpe1xuXG4gICAgLyoqKioqIFVSTCBDaGVja3MgKioqKioqL1xuICAgIGlmIChvcHRpb25zLmZyb20gPT0gXCJ1bmRlZmluZWRcIiB8fCBvcHRpb25zLnRvID09IFwidW5kZWZpbmVkXCIpIHtcbiAgICAgICAgcGx1Z2lucy5iZWF1dHlsb2cuZXJyb3IoXCJzbWFydGdpdC5jbG9uZVwiLmJsdWUgKyBcIiA6IFNvbWV0aGluZyBpcyBzdHJhbmdlIGFib3V0IHRoZSB3YXkgeW91IGludm9rZWQgdGhlIGZ1bmN0aW9uXCIpO1xuICAgICAgICByZXR1cm47XG4gICAgfVxuXG4gICAgLyoqKioqIFBhdGggQ2hlY2tzICoqKioqKi9cbiAgICBpZiAoIS9eXFwvLiovLnRlc3Qob3B0aW9ucy50bykpeyAvL2NoZWNrIHdldGhlciBwYXRoIGlzIGFic29sdXRlXG4gICAgICAgIHBsdWdpbnMuYmVhdXR5bG9nLmVycm9yKFwiSXQgc2VlbXMgdGhhdCB0aGUgZ2l2ZW4gcGF0aCBcIiArIG9wdGlvbnMudG8gKyBcIiBpcyBub3QgYWJzb2x1dGUuXCIpO1xuICAgICAgICByZXR1cm47XG4gICAgfVxuXG5cbiAgICBwbHVnaW5zLmJlYXV0eWxvZy5sb2coXCJOb3cgY2xvbmluZyBcIiArIG9wdGlvbnMuZnJvbSk7XG4gICAgdmFyIGNsb25lT3B0aW9uczphbnkgPSB7fTtcbiAgICB2YXIgY2xvbmVSZXBvc2l0b3J5ID0gcGx1Z2lucy5ub2RlZ2l0LkNsb25lKG9wdGlvbnMuZnJvbSwgb3B0aW9ucy50bywgY2xvbmVPcHRpb25zKTtcbiAgICBTbWFydGdpdENoZWNrKGNsb25lUmVwb3NpdG9yeSk7XG59OyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 31 2016 01:25:24 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

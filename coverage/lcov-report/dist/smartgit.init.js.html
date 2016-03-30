@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dist/smartgit.init.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">dist/</a> smartgit.init.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.22% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/8</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+/// &lt;reference path="./typings/main.d.ts" /&gt;
+var plugins = require("./smartgit.plugins");
+module.exports = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    var gitinit = <span class="fstat-no" title="function not covered" >function (dest) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (dest === void 0) { <span class="cstat-no" title="statement not covered" >dest = "undefined"; </span>}</span>
+<span class="cstat-no" title="statement not covered" >        if (dest == "undefined") {</span>
+<span class="cstat-no" title="statement not covered" >            return; </span>// ...and return function here if not
+        }
+<span class="cstat-no" title="statement not covered" >        var isBare = 0; </span>//lets create a subfolder
+<span class="cstat-no" title="statement not covered" >        plugins.nodegit.Repository.init(dest, isBare).then(<span class="fstat-no" title="function not covered" >function (repo) {</span></span>
+            // do something with repo here.
+        });
+    };
+};
+&nbsp;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNtYXJ0Z2l0LmluaXQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLDRDQUE0QztBQUM1QyxJQUFPLE9BQU8sV0FBVyxvQkFBb0IsQ0FBQyxDQUFDO0FBRS9DLGlCQUFTO0lBQ0wsSUFBSSxPQUFPLEdBQUcsVUFBUyxJQUF5QjtRQUF6QixvQkFBeUIsR0FBekIsa0JBQXlCO1FBQzVDLEVBQUUsQ0FBQyxDQUFDLElBQUksSUFBSSxXQUFXLENBQUMsQ0FBQyxDQUFDO1lBQ3RCLE1BQU0sQ0FBQyxDQUFDLHFDQUFxQztRQUNqRCxDQUFDO1FBQ0QsSUFBSSxNQUFNLEdBQUcsQ0FBQyxDQUFDLENBQUMseUJBQXlCO1FBQ3pDLE9BQU8sQ0FBQyxPQUFPLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxJQUFJLEVBQUUsTUFBTSxDQUFDLENBQUMsSUFBSSxDQUFDLFVBQVUsSUFBSTtZQUM3RCwrQkFBK0I7UUFDbkMsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDLENBQUM7QUFDTixDQUFDLENBQUEiLCJmaWxlIjoic21hcnRnaXQuaW5pdC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vLyA8cmVmZXJlbmNlIHBhdGg9XCIuL3R5cGluZ3MvbWFpbi5kLnRzXCIgLz5cbmltcG9ydCBwbHVnaW5zID0gcmVxdWlyZShcIi4vc21hcnRnaXQucGx1Z2luc1wiKTtcblxuZXhwb3J0ID0gZnVuY3Rpb24oKXtcbiAgICB2YXIgZ2l0aW5pdCA9IGZ1bmN0aW9uKGRlc3Q6c3RyaW5nID0gXCJ1bmRlZmluZWRcIikge1xuICAgICAgICBpZiAoZGVzdCA9PSBcInVuZGVmaW5lZFwiKSB7IC8vbGV0cyBjaGVjayBpZiBhIGRlc3RpbmF0aW9uIGlzIGRlZmluZWQuLi5cbiAgICAgICAgICAgIHJldHVybjsgLy8gLi4uYW5kIHJldHVybiBmdW5jdGlvbiBoZXJlIGlmIG5vdFxuICAgICAgICB9XG4gICAgICAgIHZhciBpc0JhcmUgPSAwOyAvL2xldHMgY3JlYXRlIGEgc3ViZm9sZGVyXG4gICAgICAgIHBsdWdpbnMubm9kZWdpdC5SZXBvc2l0b3J5LmluaXQoZGVzdCwgaXNCYXJlKS50aGVuKGZ1bmN0aW9uIChyZXBvKSB7XG4gICAgICAgICAgICAvLyBkbyBzb21ldGhpbmcgd2l0aCByZXBvIGhlcmUuXG4gICAgICAgIH0pO1xuICAgIH07XG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 31 2016 01:25:24 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -2,12 +2,9 @@
   "name": "smartgit",
   "version": "0.0.5",
   "description": "an easy wrapper for nodegit",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "(npmts) && (node test.js)",
-    "reinstall": "(rm -r node_modules && npm install)",
-    "release": "(git pull origin master && npm version patch && git push origin master && git checkout release && git merge master && git push origin release && git checkout master)",
-    "startdev": "(git checkout master && git pull origin master)"
+    "test": "(npmts)"
   },
   "repository": {
     "type": "git",
@@ -25,11 +22,12 @@
   },
   "homepage": "https://github.com/pushrocks/smartgit",
   "dependencies": {
-    "beautylog": "2.0.2",
-    "nodegit": "0.8.0",
+    "beautylog": "3.1.2",
+    "nodegit": "0.12.1",
     "q": "1.4.1"
   },
   "devDependencies": {
-    "npmts": "1.0.3"
+    "npmts": "3.6.10",
+    "should": "^8.3.0"
   }
 }

@@ -1,9 +1,5 @@
-/// <reference path="./index.ts" />
-module SmartgitCheck {
-    export var init = function(){
-        var check = function() {
-            return true;
-        };
-        return check;
-    }
-}
+/// <reference path="./typings/main.d.ts" />
+import plugins = require("./smartgit.plugins");
+export = function(repoArg) {
+    return true;
+};
