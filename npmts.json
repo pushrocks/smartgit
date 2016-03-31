@@ -1,0 +1,5 @@
+{
+  "mode":"default",
+  "coveralls":true,
+  "coverageTreshold":71
+}
