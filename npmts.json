@@ -1,5 +1,5 @@
 {
   "mode":"default",
-  "coveralls":true,
+  "codecov":true,
   "coverageTreshold":71
 }
