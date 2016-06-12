@@ -1,16 +1,26 @@
-/// <reference path="../ts/typings/main.d.ts" />
-let smartgit = require("../dist/index.js");
-let beautylog = require("beautylog");
-let path = require("path");
-let should = require("should");
+import "typings-test";
+import beautylog = require("beautylog");
+import path = require("path");
+import "should"
+
+import smartgit = require("../dist/index");
 
 describe("smartgit",function(){
     describe(".clone",function(){
-        it("should clone a repository",function(done){
+        it("should clone a repository using ssh and sshkey",function(done){
+            this.timeout(10000);
+            smartgit.clone({
+                from:"git@github.com:pushrocks/docs.git",
+                to:path.resolve("./test/temp/")
+            }).then(function(){
+                done();
+            });
+        });
+        it("should clone a repository using https",function(done){
             this.timeout(10000);
             smartgit.clone({
                 from:"https://github.com/pushrocks/docs.git",
-                to:path.resolve("./test/temp/")
+                to:path.resolve("./test/temp2/")
             }).then(function(){
                 done();
             });

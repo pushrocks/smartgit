@@ -22,12 +22,14 @@
   },
   "homepage": "https://github.com/pushrocks/smartgit",
   "dependencies": {
-    "beautylog": "^3.1.2",
-    "nodegit": "^0.12.1",
-    "q": "^1.4.1"
+    "beautylog": "^5.0.10",
+    "nodegit": "^0.13.2",
+    "q": "^1.4.1",
+    "typings-global": "^1.0.3"
   },
   "devDependencies": {
-    "npmts": "^4.0.1",
-    "should": "^8.3.0"
+    "npmts-g": "^5.2.6",
+    "should": "^9.0.2",
+    "typings-test": "^1.0.1"
   }
 }

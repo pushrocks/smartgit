@@ -1,14 +1,11 @@
-/// <reference path="./typings/main.d.ts" />
+import "typings-global"
 import plugins = require("./smartgit.plugins");
 import SmartgitCheck = require("./smartgit.check");
 
-export = function(options){
+export let clone = (options:{from:string,to:string}) => {
     let done = plugins.Q.defer();
     /***** URL Checks ******/
-    if (options.from == "undefined" || options.to == "undefined") {
-        plugins.beautylog.error("smartgit.clone".blue + " : Something is strange about the way you invoked the function");
-        return;
-    }
+    //TODO make smartstring URL test
 
     /***** Path Checks ******/
     if (!/^\/.*/.test(options.to)){ //check wether path is absolute
@@ -16,11 +13,21 @@ export = function(options){
         return;
     }
 
-
     plugins.beautylog.log("Now cloning " + options.from);
-    var cloneOptions:any = {};
-    var cloneRepository = plugins.nodegit.Clone(options.from, options.to, cloneOptions);
-    SmartgitCheck(cloneRepository);
-    done.resolve();
+    var cloneOptions:any = {
+        fetchOpts: {
+            callbacks: {
+                certificateCheck: function() { return 1; },
+                credentials: function(url, userName) {
+                    return plugins.nodegit.Cred.sshKeyFromAgent(userName);
+                }
+            }
+        }
+    };
+    var cloneRepository = plugins.nodegit.Clone.clone(options.from, options.to, cloneOptions)
+        .then(() => {
+            SmartgitCheck(cloneRepository);
+            done.resolve();
+        });
     return done.promise;
 };
