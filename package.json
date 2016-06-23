@@ -3,6 +3,7 @@
   "version": "0.0.10",
   "description": "an easy wrapper for nodegit",
   "main": "dist/index.js",
+  "typings":"dist/index.d.ts",
   "scripts": {
     "test": "(npmts)"
   },
@@ -22,7 +23,7 @@
   },
   "homepage": "https://github.com/pushrocks/smartgit",
   "dependencies": {
-    "beautylog": "^5.0.10",
+    "beautylog": "^5.0.12",
     "nodegit": "^0.13.2",
     "q": "^1.4.1",
     "typings-global": "^1.0.3"
