@@ -11,6 +11,6 @@ This npm package comes with everything you need to start your own gulp plugin.
 
 Features:
 
-* easily cone a git repo
+* easily clone a git repo
 * easily create a new git repo
 * easily add all changes and make a new commit
