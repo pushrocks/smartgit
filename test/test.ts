@@ -10,7 +10,7 @@ describe("smartgit",function(){
         it("should clone a repository using ssh and sshkey",function(done){
             this.timeout(10000);
             smartgit.clone({
-                from:"git@github.com:pushrocks/docs.git",
+                from:"git@gitlab.com:sandboxzone/sandbox-testrepo.git",
                 to:path.resolve("./test/temp/")
             }).then(function(){
                 done();
@@ -19,7 +19,7 @@ describe("smartgit",function(){
         it("should clone a repository using https",function(done){
             this.timeout(10000);
             smartgit.clone({
-                from:"https://github.com/pushrocks/docs.git",
+                from:"https://gitlab.com/sandboxzone/sandbox-testrepo.git",
                 to:path.resolve("./test/temp2/")
             }).then(function(){
                 done();
