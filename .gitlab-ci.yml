@@ -5,6 +5,9 @@ stages:
 - release
 - trigger
 
+before_script:
+  - npmci prepare ssh
+
 testLEGACY:
   stage: test
   script:
