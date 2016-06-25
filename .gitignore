@@ -2,6 +2,7 @@ node_modules/
 .settings/
 .idea/
 test/temp/
+test/temp2/
 coverage/
 docs/
 
