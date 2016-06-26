@@ -19,7 +19,6 @@ testLEGACY:
 testLTS:
   stage: test
   script:
-    - npmci test lts
     - git clone git@gitlab.com:sandboxzone/sandbox-testrepo.git
   tags:
     - docker
