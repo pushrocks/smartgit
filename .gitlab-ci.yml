@@ -7,7 +7,6 @@ stages:
 
 before_script:
   - npmci prepare ssh
-  - (cd /root/.ssh && ls -a)
 
 testLEGACY:
   stage: test
