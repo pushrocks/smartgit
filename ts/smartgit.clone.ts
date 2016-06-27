@@ -19,7 +19,11 @@ export let clone = (options:{from:string,to:string}) => {
             callbacks: {
                 certificateCheck: function() { return 1; },
                 credentials: function(url, userName) {
-                    return plugins.nodegit.Cred.sshKeyFromAgent(userName);
+                    let gitRepo = new plugins.smartstring.GitRepo(url);
+                    let sshDirPath:string;
+                    let pubKey:string;
+                    let privKey:string;
+                    return plugins.nodegit.Cred.sshKeyMemoryNew(userName, pubKey, privKey, "");
                 }
             }
         }

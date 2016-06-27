@@ -26,6 +26,8 @@
     "beautylog": "^5.0.12",
     "nodegit": "^0.14.1",
     "q": "^1.4.1",
+    "smartfile": "^4.0.5",
+    "smartstring": "^2.0.10",
     "typings-global": "^1.0.3"
   },
   "devDependencies": {
