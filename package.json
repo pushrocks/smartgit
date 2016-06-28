@@ -27,6 +27,7 @@
     "nodegit": "^0.14.1",
     "q": "^1.4.1",
     "smartfile": "^4.0.5",
+    "smartpath": "^3.2.2",
     "smartstring": "^2.0.10",
     "typings-global": "^1.0.3"
   },
