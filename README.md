@@ -2,12 +2,13 @@
 an easy wrapper for nodegit
 
 ### Buildstatus/Dependencies
-[![Build Status](https://travis-ci.org/pushrocks/smartgit.svg?branch=master)](https://travis-ci.org/pushrocks/smartgit)
+[![build status](https://gitlab.com/pushrocks/smartgit/badges/master/build.svg)](https://gitlab.com/pushrocks/smartgit/commits/master)
 [![devDependency Status](https://david-dm.org/pushrocks/smartgit/dev-status.svg)](https://david-dm.org/pushrocks/smartgit#info=devDependencies)
 [![Coverage Status](https://coveralls.io/repos/github/pushrocks/smartgit/badge.svg?branch=master)](https://coveralls.io/github/pushrocks/smartgit?branch=master)
 
 ### Usage
-This npm package comes with everything you need to start your own gulp plugin.
+This plugin exposes some easified method wrappers for nodegit.
+This limits options but reduces errors (TypeScript) and speeds up usage.
 
 Features:
 
