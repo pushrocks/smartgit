@@ -1,3 +1,3 @@
 import "typings-global";
-declare var _default: (pathArg: string, commitMessage: string) => void;
+declare var _default: (pathArg: string, commitMessage: string) => any;
 export = _default;

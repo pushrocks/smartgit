@@ -8,7 +8,7 @@ import smartgit = require("../dist/index");
 describe("smartgit",function(){
     describe(".clone",function(){
         it("should clone a repository using ssh and sshkey",function(done){
-            this.timeout(10000);
+            this.timeout(20000);
             smartgit.clone({
                 from:"git@gitlab.com:sandboxzone/sandbox-testrepo.git",
                 to:path.resolve("./test/temp/")
@@ -17,7 +17,7 @@ describe("smartgit",function(){
             });
         });
         it("should clone a repository using https",function(done){
-            this.timeout(10000);
+            this.timeout(20000);
             smartgit.clone({
                 from:"https://gitlab.com/sandboxzone/sandbox-testrepo.git",
                 to:path.resolve("./test/temp2/")

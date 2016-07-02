@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "(npmts)"
+    "cleanTest":"rm -rf test/temp && rm -rf test/temp2",
+    "test": "(npm run cleanTest && npmts)",
+    "install": "node dist/postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -23,13 +25,15 @@
   },
   "homepage": "https://github.com/pushrocks/smartgit",
   "dependencies": {
-    "beautylog": "^5.0.12",
-    "nodegit": "^0.14.1",
+    "@types/minimatch": "*",
+    "@types/shelljs": "^0.3.23-alpha",
+    "beautylog": "^5.0.13",
     "q": "^1.4.1",
-    "smartfile": "^4.0.5",
+    "shelljs": "^0.7.0",
+    "smartfile": "^4.0.10",
     "smartpath": "^3.2.2",
     "smartstring": "^2.0.10",
-    "typings-global": "^1.0.3"
+    "typings-global": "^1.0.5"
   },
   "devDependencies": {
     "npmts-g": "^5.2.6",

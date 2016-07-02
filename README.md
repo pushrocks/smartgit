@@ -1,5 +1,5 @@
 # smartgit is an easy wrapper for nodegit
-an easy wrapper for nodegit
+a wrapper for git. This plugin does not use nodegit as nodegit appears to have too many bugs for now.
 
 ### Buildstatus/Dependencies
 [![build status](https://gitlab.com/pushrocks/smartgit/badges/master/build.svg)](https://gitlab.com/pushrocks/smartgit/commits/master)
