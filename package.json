@@ -1,11 +1,11 @@
 {
   "name": "smartgit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "an easy wrapper for nodegit",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "cleanTest":"rm -rf test/temp && rm -rf test/temp2",
+    "cleanTest": "rm -rf test/temp && rm -rf test/temp2",
     "test": "(npm run cleanTest && npmts)",
     "install": "node dist/postinstall.js"
   },
