@@ -1,4 +1,4 @@
-import "typings-global"
+import "typings-global";
 
 export import path = require("path");
 export import beautylog = require("beautylog");

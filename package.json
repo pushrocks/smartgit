@@ -26,7 +26,6 @@
   "homepage": "https://github.com/pushrocks/smartgit",
   "dependencies": {
     "@types/minimatch": "*",
-    "@types/shelljs": "^0.3.23-alpha",
     "beautylog": "^5.0.13",
     "q": "^1.4.1",
     "shelljs": "^0.7.0",

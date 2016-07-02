@@ -1,2 +1,2 @@
-import shelljs = require("shelljs");
+let shelljs = require("shelljs");
 import beautylog = require("beautylog");
