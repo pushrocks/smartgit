@@ -1,6 +1,6 @@
 {
   "name": "smartgit",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "an easy wrapper for nodegit",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
