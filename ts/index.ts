@@ -1,5 +1,3 @@
-import "typings-global"
-
 import plugins = require("./smartgit.plugins");
 import SmartgitCheck = require("./smartgit.check");
 export {clone} from "./smartgit.clone";
