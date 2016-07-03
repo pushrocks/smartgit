@@ -3,7 +3,7 @@ import * as helpers from "./smartgit.helpers";
 
 export let commit = (dirPathArg:string,commitMessage:string) => {
     let done = plugins.Q.defer();
-    if(!plugins.smartfile.fs.isDirectory(plugins.path.join(dirPathArg,".git"))){
+    if(!helpers.isGitDirectory(dirPathArg)){
         plugins.beautylog.error("smartgit.commit expects a valid git directory");
         done.reject();
         return done.promise;

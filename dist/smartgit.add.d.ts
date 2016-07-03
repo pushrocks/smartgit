@@ -1,4 +1,1 @@
-export declare let pull: (optionsArg: {
-    path: string;
-    ref?: string;
-}) => void;
+export declare let add: (dirPathArg: string) => any;
