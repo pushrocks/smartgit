@@ -9,7 +9,7 @@ export let commit = (dirPathArg:string,commitMessage:string) => {
         return done.promise;
     };
     // if everything is all right proceed
-    plugins.shelljs.exec(`git commit -m "${commitMessage}"`);
+    plugins.shelljs.exec(`(cd ${dirPathArg} && git commit -m "${commitMessage}")`);
     done.resolve();
     return done.promise;
 };

@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "cleanTest": "rm -rf test/temp && rm -rf test/temp2",
+    "cleanTest": "rm -rf test/temp*",
     "test": "(npm run cleanTest && npmts)",
     "install": "node dist/postinstall.js"
   },

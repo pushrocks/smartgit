@@ -1,7 +1,12 @@
 import * as plugins from "./smartgit.plugins";
 
 export let isGitDirectory = (dirPathArg):boolean => {
-    return plugins.smartfile.fs.isDirectory(
-        plugins.path.join(dirPathArg,".git")
-    );
+    try {
+        return plugins.smartfile.fs.isDirectory(
+            plugins.path.join(dirPathArg,".git")
+        );
+    }
+    catch(err){
+        return false;
+    }
 }

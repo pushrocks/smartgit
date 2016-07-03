@@ -1,1 +1,3 @@
-export declare let add: (dirPathArg: string) => any;
+export declare let add: {
+    addAll: (dirPathArg: string) => any;
+};
