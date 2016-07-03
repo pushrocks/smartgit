@@ -1,7 +1,7 @@
 {
   "name": "smartgit",
   "version": "0.1.5",
-  "description": "an easy wrapper for nodegit",
+  "description": "an easy wrapper for git",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pushrocks/smartgit.git"
+    "url": "https://gitlab.com/pushrocks/smartgit.git"
   },
   "keywords": [
     "json",
@@ -21,9 +21,9 @@
   "author": "Smart Coordination GmbH <office@push.rocks> (https://push.rocks)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pushrocks/smartgit/issues"
+    "url": "https://gitlab.com/pushrocks/smartgit/issues"
   },
-  "homepage": "https://github.com/pushrocks/smartgit",
+  "homepage": "https://gitlab.com/pushrocks/smartgit",
   "dependencies": {
     "@types/minimatch": "*",
     "beautylog": "^5.0.13",

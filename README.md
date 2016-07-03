@@ -12,6 +12,12 @@ This limits options but reduces errors (TypeScript) and speeds up usage.
 
 Features:
 
-* easily clone a git repo
-* easily create a new git repo
-* easily add all changes and make a new commit
+* clone a git repo
+* init a new repo
+* create a new git repo
+* add changes and make a new commit
+* commit changes
+* push changes
+* add/remove remotes
+
+Tip: use smartssh to setup your SSH environment

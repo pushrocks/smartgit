@@ -8,6 +8,7 @@ export let pull = (dirPathArg:string,sourceArg:string = "", branchArg:string = "
         done.reject();
         return done.promse;
     };
+    // if everything is allright proceed
     plugins.shelljs.exec(`(cd ${dirPathArg} && git pull ${sourceArg} ${branchArg})`);
     done.resolve(dirPathArg);
     return done.promise;

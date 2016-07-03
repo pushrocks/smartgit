@@ -58,7 +58,7 @@ describe("smartgit", function () {
         });
     });
     describe("pull", function () {
-        this.timeout(10000);
+        this.timeout(20000);
         it("should error for noGit", function () {
             smartgit.pull(paths.noGit);
         });
