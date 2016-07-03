@@ -1,7 +1,7 @@
 import plugins = require("./smartgit.plugins");
-import SmartgitCheck = require("./smartgit.check");
+
 export {clone} from "./smartgit.clone";
-import SmartgitCommit = require("./smartgit.commit");
-import SmartgitInit = require("./smartgit.init");
-
-
+export {commit} from "./smartgit.commit";
+export {init} from "./smartgit.init";
+export {pull} from "./smartgit.pull";
+export {push} from "./smartgit.push";

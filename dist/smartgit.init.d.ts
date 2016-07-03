@@ -1,2 +1,1 @@
-declare var _default: () => void;
-export = _default;
+export declare let init: (dirPathArg: string) => any;

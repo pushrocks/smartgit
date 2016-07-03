@@ -1,0 +1,6 @@
+"use strict";
+var plugins = require("./smartgit.plugins");
+exports.isGitDirectory = function (dirPathArg) {
+    return plugins.smartfile.fs.isDirectory(plugins.path.join(dirPathArg, ".git"));
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic21hcnRnaXQuaGVscGVycy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3RzL3NtYXJ0Z2l0LmhlbHBlcnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLElBQVksT0FBTyxXQUFNLG9CQUFvQixDQUFDLENBQUE7QUFFbkMsc0JBQWMsR0FBRyxVQUFDLFVBQVU7SUFDbkMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxTQUFTLENBQUMsRUFBRSxDQUFDLFdBQVcsQ0FDbkMsT0FBTyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsVUFBVSxFQUFDLE1BQU0sQ0FBQyxDQUN2QyxDQUFDO0FBQ04sQ0FBQyxDQUFBIn0=

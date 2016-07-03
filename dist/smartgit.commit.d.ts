@@ -1,2 +1,1 @@
-declare var _default: (pathArg: string, commitMessage: string) => any;
-export = _default;
+export declare let commit: (dirPathArg: string, commitMessage: string) => any;
