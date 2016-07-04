@@ -7,3 +7,4 @@ export {init} from "./smartgit.init";
 export {pull} from "./smartgit.pull";
 export {push} from "./smartgit.push";
 export {remote} from "./smartgit.remote";
+export {status} from "./smartgit.status";

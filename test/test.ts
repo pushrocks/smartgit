@@ -16,7 +16,7 @@ let paths = {
 describe("smartgit",function(){
     describe(".clone",function(){
         it("should clone a repository using ssh and sshkey",function(done){
-            this.timeout(20000);
+            this.timeout(40000);
             smartgit.clone({
                 from:"git@gitlab.com:sandboxzone/sandbox-testrepo.git",
                 to:paths.temp
@@ -25,7 +25,7 @@ describe("smartgit",function(){
             });
         });
         it("should clone a repository using https",function(done){
-            this.timeout(20000);
+            this.timeout(40000);
             smartgit.clone({
                 from:"https://gitlab.com/sandboxzone/sandbox-testrepo.git",
                 to:paths.temp2
@@ -60,12 +60,26 @@ describe("smartgit",function(){
         })
     });
     describe("pull",function(){
-        this.timeout(20000);
+        this.timeout(40000);
         it("should error for noGit",function(){
             smartgit.pull(paths.noGit);
         });
         it("should pull from origin",function(){
             smartgit.pull(paths.temp);
         })
+    });
+    describe("remote",function(){
+        it("should error for noGit",function(){
+            smartgit.remote.add(paths.noGit,null,null);
+        });
+        it("should error for no remote name",function(){
+            smartgit.remote.add(paths.temp,null,null);
+        });
+        it("should error for no remote link",function(){
+            smartgit.remote.add(paths.temp,"origin",null);
+        });
+        it("should add a remote",function(){
+            smartgit.remote.add(paths.temp,"origin2","https://github.com/pushrocks/somerepo");
+        });
     });
 });

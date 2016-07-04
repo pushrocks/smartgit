@@ -6,7 +6,7 @@ export let pull = (dirPathArg:string,sourceArg:string = "", branchArg:string = "
     if(!helpers.isGitDirectory(dirPathArg)){
         plugins.beautylog.error("smartgit.pull expects a valid git directory");
         done.reject();
-        return done.promse;
+        return done.promise;
     };
     // if everything is allright proceed
     plugins.shelljs.exec(`(cd ${dirPathArg} && git pull ${sourceArg} ${branchArg})`);

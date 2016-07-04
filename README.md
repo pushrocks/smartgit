@@ -20,4 +20,4 @@ Features:
 * push changes
 * add/remove remotes
 
-Tip: use smartssh to setup your SSH environment
+Tip: use [smartssh](https://npmjs.com/smartssh) to setup your SSH environment
