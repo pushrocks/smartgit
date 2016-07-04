@@ -1,1 +1,1 @@
-export declare let push: (dirPathArg: string, sourceArg?: string, branchArg?: string) => any;
+export declare let push: (dirPathArg: string, remoteNameArg?: string, remoteBranchArg?: string) => any;
