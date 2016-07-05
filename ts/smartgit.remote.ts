@@ -4,18 +4,21 @@ import * as helpers from "./smartgit.helpers";
 let add = (dirPathArg,remoteNameArg:string, remoteLinkArg:string) => {
     let done = plugins.Q.defer();
     if(!helpers.isGitDirectory(dirPathArg)){
-        plugins.beautylog.error("smartgit.remote.add expects a valid git directory");
-        done.reject();
+        let err = new Error("smartgit.remote.add expects a valid git directory");
+        plugins.beautylog.error(err.message);
+        done.reject(err);
         return done.promise;
     };
     if(!remoteNameArg) {
-        plugins.beautylog.error("smartgit.remote.add expects a valid remote name");
-        done.reject();
+        let err = new Error("smartgit.remote.add expects a valid remote name");
+        plugins.beautylog.error(err.message);
+        done.reject(err);
         return done.promise;
     };
     if(!remoteLinkArg) {
-        plugins.beautylog.error("smartgit.remote.add expects a valid remote link");
-        done.reject();
+        let err = new Error();
+        plugins.beautylog.error(err.message);
+        done.reject(err);
         return done.promise;
     };
     // if everything is all right proceed
@@ -33,8 +36,9 @@ let list = (dirPathArg) => {
     let done = plugins.Q.defer();
     let remotes = {};
     if(!helpers.isGitDirectory(dirPathArg)){
-        plugins.beautylog.error("smartgit.remote.list expects a valid git directory");
-        done.reject();
+        let err = new Error("smartgit.remote.list expects a valid git directory");
+        plugins.beautylog.error(err.message);
+        done.reject(err);
         return done.promise;
     };
     // if  everything is all right proceed
@@ -46,8 +50,9 @@ let list = (dirPathArg) => {
 let remove = (dirPathArg:string) => {
     let done = plugins.Q.defer();
     if(!helpers.isGitDirectory(dirPathArg)){
-        plugins.beautylog.error("smartgit.remote.remove expects a valid git directory");
-        done.reject();
+        let err = new Error("smartgit.remote.remove expects a valid git directory");
+        plugins.beautylog.error(err.message);
+        done.reject(err);
         return done.promise;
     };
     // if everything is all right 

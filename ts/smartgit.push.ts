@@ -4,8 +4,9 @@ import * as helpers from "./smartgit.helpers";
 export let push = (dirPathArg:string, remoteNameArg:string = "", remoteBranchArg:string = "") => {
     let done = plugins.Q.defer();
     if(!helpers.isGitDirectory(dirPathArg)){
-        plugins.beautylog.error("smartgit.push expects a valid git directory");
-        done.reject();
+        let err = new Error("smartgit.push expects a valid git directory");
+        plugins.beautylog.error(err.message);
+        done.reject(err);
         return done.promise;
     }
     // if everything seems allright proceed

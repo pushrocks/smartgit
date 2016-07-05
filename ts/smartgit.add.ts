@@ -4,8 +4,9 @@ import * as helpers from "./smartgit.helpers";
 let addAll = (dirPathArg:string) => {
     let done = plugins.Q.defer();
     if(!helpers.isGitDirectory(dirPathArg)){
-        plugins.beautylog.error("smartgit.add expects a valid git directory!");
-        done.reject();
+        let err = new Error("smartgit.add expects a valid git directory!");
+        plugins.beautylog.error(err.message);
+        done.reject(err);
         return done.promise;
     };
     // if everything is ok proceed

@@ -68,6 +68,15 @@ describe("smartgit",function(){
             smartgit.pull(paths.temp);
         })
     });
+    describe("push",function(){
+        this.timeout(40000);
+        it("should error for noGit",function(){
+            smartgit.push(paths.noGit);
+        });
+        it("should push to origin",function(){
+            smartgit.push(paths.temp,"origin","master");
+        })
+    });
     describe("remote",function(){
         it("should error for noGit",function(){
             smartgit.remote.add(paths.noGit,null,null);
