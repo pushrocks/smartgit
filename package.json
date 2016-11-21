@@ -30,6 +30,7 @@
     "beautylog": "^6.0.0",
     "q": "^1.4.1",
     "shelljs": "^0.7.5",
+    "simple-git": "^1.62.0",
     "smartfile": "^4.1.0",
     "smartpath": "^3.2.5",
     "smartstring": "^2.0.22",
