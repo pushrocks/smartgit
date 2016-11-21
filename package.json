@@ -26,17 +26,19 @@
   "homepage": "https://gitlab.com/pushrocks/smartgit",
   "dependencies": {
     "@types/minimatch": "*",
-    "beautylog": "^5.0.13",
+    "@types/shelljs": "^0.3.32",
+    "beautylog": "^6.0.0",
     "q": "^1.4.1",
-    "shelljs": "^0.7.0",
-    "smartfile": "^4.0.10",
-    "smartpath": "^3.2.2",
-    "smartstring": "^2.0.10",
-    "typings-global": "^1.0.5"
+    "shelljs": "^0.7.5",
+    "smartfile": "^4.1.0",
+    "smartpath": "^3.2.5",
+    "smartstring": "^2.0.22",
+    "typings-global": "^1.0.14"
   },
   "devDependencies": {
-    "npmts-g": "^5.2.6",
-    "should": "^9.0.2",
-    "typings-test": "^1.0.1"
+    "@types/should": "^8.1.30",
+    "npmts-g": "^5.2.8",
+    "should": "^11.1.1",
+    "typings-test": "^1.0.3"
   }
 }

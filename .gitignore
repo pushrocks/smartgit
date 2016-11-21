@@ -1,12 +1,11 @@
 node_modules/
-.settings/
-.idea/
 test/temp/
 test/temp2/
 coverage/
-docs/
+public/
+pages/
 
-#npm devug
+#npm debug
 npm-debug.log
 
 ts/*.js

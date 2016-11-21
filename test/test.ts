@@ -1,8 +1,8 @@
-import "typings-test";
+import "typings-test"
 import beautylog = require("beautylog");
 let shelljs = require("shelljs");
 import path = require("path");
-import "should"
+import * as should from "should"
 
 import smartgit = require("../dist/index");
 let paths = {
