@@ -8,17 +8,16 @@ export class GitRepo {
     repoBase: string
     constructor(repoBaseArg: string) {
         this.repoBase = repoBaseArg
+        if (!this.check()) {
+            throw new Error('no valid git repo')
+        }
     }
 
     /**
      * checks if the Repo is valid
      */
     check(): boolean {
-        try {
-            return plugins.smartfile.fs.isDirectory(plugins.path.join(this.repoBase, '.git'))
-        } catch (err) {
-            return false
-        }
+        return plugins.smartfile.fs.isDirectory(plugins.path.join(this.repoBase, '.git'))
     }
 
     /**
@@ -58,10 +57,10 @@ export class GitRepo {
     /**
      * list remotes for a Gip
      */
-    remoteList(dirPathArg) {
+    remoteList() {
         let done = q.defer()
         let remotes = {}
-        plugins.shelljs.exec(`cd ${dirPathArg} && git remote -v`)
+        plugins.shelljs.exec(`cd ${this.repoBase} && git remote -v`)
         done.resolve(remotes)
         return done.promise
     };

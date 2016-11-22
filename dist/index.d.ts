@@ -9,4 +9,4 @@ export declare let createRepoFromClone: (fromArg: string, toArg: string) => q.Pr
 /**
  * creates a new GitRepo instance after initializing a new Git Repository
  */
-export declare let createRepoFromInit: (destinationDirArg: string) => void;
+export declare let createRepoFromInit: (destinationDirArg: string) => q.Promise<GitRepo>;

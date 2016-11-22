@@ -6,25 +6,45 @@ import * as should from 'should'
 
 import smartgit = require('../dist/index')
 let paths = {
-    temp: path.resolve('./test/temp/'),
+    temp1: path.resolve('./test/temp/'),
     temp2: path.resolve('./test/temp2/'),
     temp3: path.resolve('./test/temp3'),
     temp4: path.resolve('./test/temp4'),
     noGit: path.resolve('./test/')
 }
 
+
+
 describe('smartgit', function () {
     let testGitRepo: smartgit.GitRepo
     let testGitRepoCloned: smartgit.GitRepo
     let testGitRepoInit: smartgit.GitRepo
     describe('instance', function () {
-        it('should create a valid new instance from path', function () {
-            testGitRepo = new smartgit.GitRepo('path.temp')
+        it('should error for invalid path', function (done) {
+            try {
+                testGitRepo = new smartgit.GitRepo(paths.temp1)
+            } catch (err) {
+                should(testGitRepo).not.be.instanceOf(smartgit.GitRepo)
+                done()
+            }
+        })
+        it('should init a new repo', function (done) {
+            this.timeout(40000)
+            smartgit.createRepoFromInit(paths.temp1)
+                .then((gitRepo) => {
+                    should(gitRepo).be.instanceOf(smartgit.GitRepo)
+                    done()
+                }).catch(err => {
+                    throw err
+                })
+        })
+        it('should create am instance for an existing repo', function () {
+            testGitRepo = new smartgit.GitRepo(paths.temp1)
             should(testGitRepo).be.instanceOf(smartgit.GitRepo)
         })
         it('should clone a repository using ssh and sshkey', function (done) {
             this.timeout(40000)
-            smartgit.createRepoFromClone('git@gitlab.com:sandboxzone/sandbox-testrepo.git', paths.temp)
+            smartgit.createRepoFromClone('git@gitlab.com:sandboxzone/sandbox-testrepo.git', paths.temp2)
                 .then((gitRepo) => {
                     should(gitRepo).be.instanceOf(smartgit.GitRepo)
                     done()
@@ -34,7 +54,7 @@ describe('smartgit', function () {
         })
         it('should clone a repository using https', function (done) {
             this.timeout(40000)
-            smartgit.createRepoFromClone('https://gitlab.com/sandboxzone/sandbox-testrepo.git', paths.temp2)
+            smartgit.createRepoFromClone('https://gitlab.com/sandboxzone/sandbox-testrepo.git', paths.temp3)
                 .then((gitRepo) => {
                     should(gitRepo).be.instanceOf(smartgit.GitRepo)
                     done()
@@ -45,8 +65,14 @@ describe('smartgit', function () {
     })
     describe('.add', function () {
         it('should add a file to an existing repository', function () {
-            shelljs.exec(`(cd ${paths.temp} && cp ../test.js .)`)
-            testGitRepo.addAll(paths.temp)
+            shelljs.exec(`(cd ${paths.temp1} && cp ../test.js .)`)
+            testGitRepo.addAll(paths.temp1)
+        })
+    })
+    describe('.check()', function(done) {
+        it('should check a git repo', function() {
+            let checkResult = testGitRepo.check()
+            should(checkResult).be.true()
         })
     })
     describe('commit', function () {
@@ -75,6 +101,12 @@ describe('smartgit', function () {
     describe('remote', function () {
         it('should add a remote', function () {
             testGitRepo.remoteAdd('origin2', 'https://github.com/pushrocks/somerepo')
+        })
+        it('should', function(done) {
+            testGitRepo.remoteList()
+                .then(() => {
+                    done()
+                })
         })
     })
 })

@@ -24,7 +24,8 @@ export let createRepoFromClone = (fromArg: string, toArg: string) => {
 export let createRepoFromInit = (destinationDirArg: string) => {
     let done = q.defer<GitRepo>()
     plugins.smartfile.fs.ensureDir(destinationDirArg)
-    plugins.shelljs.exec(`cd destinationDirArg && git init`)
+    plugins.shelljs.exec(`cd ${destinationDirArg} && git init`)
     let newRepo = new GitRepo(destinationDirArg)
     done.resolve(newRepo)
+    return done.promise
 }

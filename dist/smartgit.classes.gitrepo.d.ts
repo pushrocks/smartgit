@@ -21,7 +21,7 @@ export declare class GitRepo {
     /**
      * list remotes for a Gip
      */
-    remoteList(dirPathArg: any): q.Promise<{}>;
+    remoteList(): q.Promise<{}>;
     /**
      * remove remote
      */
