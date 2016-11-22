@@ -1,94 +1,80 @@
-import "typings-test"
-import beautylog = require("beautylog");
-let shelljs = require("shelljs");
-import path = require("path");
-import * as should from "should"
+import 'typings-test'
+import beautylog = require('beautylog')
+let shelljs = require('shelljs')
+import path = require('path')
+import * as should from 'should'
 
-import smartgit = require("../dist/index");
+import smartgit = require('../dist/index')
 let paths = {
-    temp: path.resolve("./test/temp/"),
-    temp2: path.resolve("./test/temp2/"),
-    temp3: path.resolve("./test/temp3"),
-    temp4: path.resolve("./test/temp4"),
-    noGit: path.resolve("./test/")
+    temp: path.resolve('./test/temp/'),
+    temp2: path.resolve('./test/temp2/'),
+    temp3: path.resolve('./test/temp3'),
+    temp4: path.resolve('./test/temp4'),
+    noGit: path.resolve('./test/')
 }
 
-describe("smartgit",function(){
-    describe(".clone",function(){
-        it("should clone a repository using ssh and sshkey",function(done){
-            this.timeout(40000);
-            smartgit.clone({
-                from:"git@gitlab.com:sandboxzone/sandbox-testrepo.git",
-                to:paths.temp
-            }).then(function(){
-                done();
-            });
-        });
-        it("should clone a repository using https",function(done){
-            this.timeout(40000);
-            smartgit.clone({
-                from:"https://gitlab.com/sandboxzone/sandbox-testrepo.git",
-                to:paths.temp2
-            }).then(function(){
-                done();
-            });
-        });
-    });
-    describe(".add",function(){
-        it("should error for noGit",function(){
-            smartgit.add.addAll(paths.noGit);
+describe('smartgit', function () {
+    let testGitRepo: smartgit.GitRepo
+    let testGitRepoCloned: smartgit.GitRepo
+    let testGitRepoInit: smartgit.GitRepo
+    describe('instance', function () {
+        it('should create a valid new instance from path', function () {
+            testGitRepo = new smartgit.GitRepo('path.temp')
+            should(testGitRepo).be.instanceOf(smartgit.GitRepo)
         })
-        it("should add a file to an existing repository",function(){
+        it('should clone a repository using ssh and sshkey', function (done) {
+            this.timeout(40000)
+            smartgit.createRepoFromClone('git@gitlab.com:sandboxzone/sandbox-testrepo.git', paths.temp)
+                .then((gitRepo) => {
+                    should(gitRepo).be.instanceOf(smartgit.GitRepo)
+                    done()
+                }).catch(err => {
+                    throw err
+                })
+        })
+        it('should clone a repository using https', function (done) {
+            this.timeout(40000)
+            smartgit.createRepoFromClone('https://gitlab.com/sandboxzone/sandbox-testrepo.git', paths.temp2)
+                .then((gitRepo) => {
+                    should(gitRepo).be.instanceOf(smartgit.GitRepo)
+                    done()
+                }).catch(err => {
+                    throw err
+                })
+        })
+    })
+    describe('.add', function () {
+        it('should add a file to an existing repository', function () {
             shelljs.exec(`(cd ${paths.temp} && cp ../test.js .)`)
-            smartgit.add.addAll(paths.temp);
+            testGitRepo.addAll(paths.temp)
         })
-    });
-    describe("commit",function(){
-        it("should error for noGit",function(){
-            smartgit.commit(paths.noGit,"some commit message");
+    })
+    describe('commit', function () {
+        it('should commit a new file to an existing repository', function () {
+            testGitRepo.commit('added a new file')
         })
-        it("should commit a new file to an existing repository",function(){
-            smartgit.commit(paths.temp,"added a new file");
+    })
+    describe('pull', function () {
+        this.timeout(40000)
+        it('should pull from origin', function (done) {
+            testGitRepo.pull()
+                .then(() => {
+                    done()
+                })
         })
-    });
-    describe("init",function(){
-        it("should error for noGit",function(){
-            smartgit.init(paths.noGit);
-        });
-        it("should init a new git",function(){
-            smartgit.init(paths.temp3);
+    })
+    describe('push', function () {
+        this.timeout(40000)
+        it('should push to origin', function (done) {
+            testGitRepo.push('origin', 'master')
+                .then(() => {
+                    done()
+                })
         })
-    });
-    describe("pull",function(){
-        this.timeout(40000);
-        it("should error for noGit",function(){
-            smartgit.pull(paths.noGit);
-        });
-        it("should pull from origin",function(){
-            smartgit.pull(paths.temp);
+    })
+    describe('remote', function () {
+        it('should add a remote', function () {
+            testGitRepo.remoteAdd('origin2', 'https://github.com/pushrocks/somerepo')
         })
-    });
-    describe("push",function(){
-        this.timeout(40000);
-        it("should error for noGit",function(){
-            smartgit.push(paths.noGit);
-        });
-        it("should push to origin",function(){
-            smartgit.push(paths.temp,"origin","master");
-        })
-    });
-    describe("remote",function(){
-        it("should error for noGit",function(){
-            smartgit.remote.add(paths.noGit,null,null);
-        });
-        it("should error for no remote name",function(){
-            smartgit.remote.add(paths.temp,null,null);
-        });
-        it("should error for no remote link",function(){
-            smartgit.remote.add(paths.temp,"origin",null);
-        });
-        it("should add a remote",function(){
-            smartgit.remote.add(paths.temp,"origin2","https://github.com/pushrocks/somerepo");
-        });
-    });
-});
+    })
+})

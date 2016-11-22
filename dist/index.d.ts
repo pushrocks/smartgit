@@ -1,8 +1,12 @@
-export { add } from "./smartgit.add";
-export { clone } from "./smartgit.clone";
-export { commit } from "./smartgit.commit";
-export { init } from "./smartgit.init";
-export { pull } from "./smartgit.pull";
-export { push } from "./smartgit.push";
-export { remote } from "./smartgit.remote";
-export { status } from "./smartgit.status";
+/// <reference types="q" />
+import * as q from 'q';
+import { GitRepo } from './smartgit.classes.gitrepo';
+export { GitRepo };
+/**
+ * creates a new GitRepo Instance after cloning a project
+ */
+export declare let createRepoFromClone: (fromArg: string, toArg: string) => q.Promise<GitRepo>;
+/**
+ * creates a new GitRepo instance after initializing a new Git Repository
+ */
+export declare let createRepoFromInit: (destinationDirArg: string) => void;

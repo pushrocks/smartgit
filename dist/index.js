@@ -1,18 +1,27 @@
 "use strict";
-var smartgit_add_1 = require("./smartgit.add");
-exports.add = smartgit_add_1.add;
-var smartgit_clone_1 = require("./smartgit.clone");
-exports.clone = smartgit_clone_1.clone;
-var smartgit_commit_1 = require("./smartgit.commit");
-exports.commit = smartgit_commit_1.commit;
-var smartgit_init_1 = require("./smartgit.init");
-exports.init = smartgit_init_1.init;
-var smartgit_pull_1 = require("./smartgit.pull");
-exports.pull = smartgit_pull_1.pull;
-var smartgit_push_1 = require("./smartgit.push");
-exports.push = smartgit_push_1.push;
-var smartgit_remote_1 = require("./smartgit.remote");
-exports.remote = smartgit_remote_1.remote;
-var smartgit_status_1 = require("./smartgit.status");
-exports.status = smartgit_status_1.status;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi90cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBRUEsK0NBQW1DO0FBQTNCLDZCQUFBLEdBQUcsQ0FBQTtBQUNYLG1EQUF1QztBQUEvQixpQ0FBQSxLQUFLLENBQUE7QUFDYixxREFBeUM7QUFBakMsbUNBQUEsTUFBTSxDQUFBO0FBQ2QsaURBQXFDO0FBQTdCLCtCQUFBLElBQUksQ0FBQTtBQUNaLGlEQUFxQztBQUE3QiwrQkFBQSxJQUFJLENBQUE7QUFDWixpREFBcUM7QUFBN0IsK0JBQUEsSUFBSSxDQUFBO0FBQ1oscURBQXlDO0FBQWpDLG1DQUFBLE1BQU0sQ0FBQTtBQUNkLHFEQUF5QztBQUFqQyxtQ0FBQSxNQUFNLENBQUEifQ==
+const q = require("q");
+const plugins = require("./smartgit.plugins");
+const smartgit_classes_gitrepo_1 = require("./smartgit.classes.gitrepo");
+exports.GitRepo = smartgit_classes_gitrepo_1.GitRepo;
+/**
+ * creates a new GitRepo Instance after cloning a project
+ */
+exports.createRepoFromClone = (fromArg, toArg) => {
+    let done = q.defer();
+    plugins.smartfile.fs.ensureDir(toArg);
+    plugins.shelljs.exec(`git clone ${fromArg} ${toArg}`);
+    let newRepo = new smartgit_classes_gitrepo_1.GitRepo(toArg);
+    done.resolve(newRepo);
+    return done.promise;
+};
+/**
+ * creates a new GitRepo instance after initializing a new Git Repository
+ */
+exports.createRepoFromInit = (destinationDirArg) => {
+    let done = q.defer();
+    plugins.smartfile.fs.ensureDir(destinationDirArg);
+    plugins.shelljs.exec(`cd destinationDirArg && git init`);
+    let newRepo = new smartgit_classes_gitrepo_1.GitRepo(destinationDirArg);
+    done.resolve(newRepo);
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi90cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsdUJBQXNCO0FBQ3RCLDhDQUErQztBQUUvQyx5RUFBb0Q7QUFFaEQscURBQU87QUFHWDs7R0FFRztBQUNRLFFBQUEsbUJBQW1CLEdBQUcsQ0FBQyxPQUFlLEVBQUUsS0FBYTtJQUM1RCxJQUFJLElBQUksR0FBRyxDQUFDLENBQUMsS0FBSyxFQUFXLENBQUE7SUFDN0IsT0FBTyxDQUFDLFNBQVMsQ0FBQyxFQUFFLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxDQUFBO0lBQ3JDLE9BQU8sQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLGFBQWEsT0FBTyxJQUFJLEtBQUssRUFBRSxDQUFDLENBQUE7SUFDckQsSUFBSSxPQUFPLEdBQUcsSUFBSSxrQ0FBTyxDQUFDLEtBQUssQ0FBQyxDQUFBO0lBQ2hDLElBQUksQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDLENBQUE7SUFDckIsTUFBTSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUE7QUFDdkIsQ0FBQyxDQUFBO0FBRUQ7O0dBRUc7QUFDUSxRQUFBLGtCQUFrQixHQUFHLENBQUMsaUJBQXlCO0lBQ3RELElBQUksSUFBSSxHQUFHLENBQUMsQ0FBQyxLQUFLLEVBQVcsQ0FBQTtJQUM3QixPQUFPLENBQUMsU0FBUyxDQUFDLEVBQUUsQ0FBQyxTQUFTLENBQUMsaUJBQWlCLENBQUMsQ0FBQTtJQUNqRCxPQUFPLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxrQ0FBa0MsQ0FBQyxDQUFBO0lBQ3hELElBQUksT0FBTyxHQUFHLElBQUksa0NBQU8sQ0FBQyxpQkFBaUIsQ0FBQyxDQUFBO0lBQzVDLElBQUksQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDLENBQUE7QUFDekIsQ0FBQyxDQUFBIn0=
