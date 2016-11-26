@@ -1,0 +1,12 @@
+{
+    "npmts": {
+        "mode": "default",
+        "codecov": true,
+        "coverageTreshold": 71
+    },
+    "npmci": {
+        "globalNpmTools": [
+            "npmts"
+        ]
+    }
+}
