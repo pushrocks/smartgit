@@ -6,8 +6,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "cleanTest": "rm -rf test/temp*",
-    "test": "(npm run cleanTest && npmts)",
-    "install": "node dist/postinstall.js"
+    "test": "(npm run cleanTest && npmts)"
   },
   "repository": {
     "type": "git",
