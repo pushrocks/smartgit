@@ -12,8 +12,9 @@ export declare class GitRepo {
     check(): boolean;
     /**
      * stage all files in working directory
+     * @executes SYNC
      */
-    addAll(dirPathArg: string): q.Promise<{}>;
+    addAll(): q.Promise<{}>;
     /**
      * add a remote to the GitRepo
      */

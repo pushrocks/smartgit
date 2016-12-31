@@ -22,11 +22,12 @@ export class GitRepo {
 
     /**
      * stage all files in working directory
+     * @executes SYNC
      */
-    addAll(dirPathArg: string) {
+    addAll() {
         let done = q.defer()
-        plugins.shelljs.exec(`(cd ${dirPathArg} && git add -A && git status)`)
-        done.resolve(dirPathArg)
+        plugins.shelljs.exec(`(cd ${this.repoBase} && git add -A && git status)`)
+        done.resolve(this.repoBase)
         return done.promise
     };
 

@@ -66,10 +66,10 @@ describe('smartgit', function () {
     describe('.add', function () {
         it('should add a file to an existing repository', function () {
             shelljs.exec(`(cd ${paths.temp1} && cp ../test.js .)`)
-            testGitRepo.addAll(paths.temp1)
+            testGitRepo.addAll()
         })
     })
-    describe('.check()', function(done) {
+    describe('.check()', function() {
         it('should check a git repo', function() {
             let checkResult = testGitRepo.check()
             should(checkResult).be.true()
