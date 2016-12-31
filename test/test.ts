@@ -13,8 +13,6 @@ let paths = {
     noGit: path.resolve('./test/')
 }
 
-
-
 describe('smartgit', function () {
     let testGitRepo: smartgit.GitRepo
     let testGitRepoCloned: smartgit.GitRepo

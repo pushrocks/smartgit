@@ -84,7 +84,6 @@ export class GitRepo {
         return done.promise
     }
 
-
     /**
      * pull latest changes from remote
      */
