@@ -1,13 +1,22 @@
-node_modules/
-test/temp/
-test/temp2/
+.nogit/
+
+# artifacts
 coverage/
 public/
 pages/
 
-#npm debug
-npm-debug.log
+# installs
+node_modules/
 
-ts/*.js
-ts/*.js.map
-ts/typings/
+# caches
+.yarn/
+.cache/
+.rpt2_cache
+
+# builds
+dist/
+dist_web/
+dist_serve/
+dist_ts_web/
+
+# custom

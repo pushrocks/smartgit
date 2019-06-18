@@ -1,12 +1,22 @@
 {
-    "npmts": {
-        "mode": "default",
-        "codecov": true,
-        "coverageTreshold": 71
-    },
-    "npmci": {
-        "globalNpmTools": [
-            "npmts"
-        ]
+  "npmts": {
+    "mode": "default",
+    "codecov": true,
+    "coverageTreshold": 71
+  },
+  "npmci": {
+    "globalNpmTools": [
+      "npmts"
+    ]
+  },
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "pushrocks",
+      "gitrepo": "smartgit",
+      "shortDescription": "smart wrapper for nodegit",
+      "npmPackagename": "@pushrocks/smartgit",
+      "license": "MIT"
     }
+  }
 }

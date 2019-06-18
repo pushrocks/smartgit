@@ -1,7 +1,16 @@
-import 'typings-global'
-export import path = require('path')
-export import beautylog = require('beautylog')
-export import shelljs = require('shelljs')
-export import smartfile = require('smartfile')
-export import smartpath = require('smartpath')
-export import smartstring = require('smartstring')
+// node native
+import * as path from 'path';
+
+export { path };
+
+import * as smartfile from '@pushrocks/smartfile';
+import * as smartpath from '@pushrocks/smartpath';
+import * as smartpromise from '@pushrocks/smartpromise';
+import * as smartstring from '@pushrocks/smartstring';
+
+export { smartfile, smartpath, smartpromise, smartstring };
+
+// third party
+import * as nodegit from 'nodegit';
+
+export { nodegit };

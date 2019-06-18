@@ -1,12 +1,12 @@
 {
-  "name": "smartgit",
+  "name": "@pushrocks/smartgit",
   "version": "1.0.5",
-  "description": "smart git wrapper for node",
+  "description": "smart wrapper for nodegit",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "cleanTest": "rm -rf test/temp*",
-    "test": "(npm run cleanTest && npmts)"
+    "test": "(tstest test/)",
+    "build": "(tsbuild)"
   },
   "repository": {
     "type": "git",
@@ -24,21 +24,31 @@
   },
   "homepage": "https://gitlab.com/pushrocks/smartgit",
   "dependencies": {
-    "@types/minimatch": "*",
-    "@types/shelljs": "^0.3.32",
-    "beautylog": "^6.0.0",
-    "q": "^1.4.1",
-    "shelljs": "^0.7.5",
-    "simple-git": "^1.62.0",
-    "smartfile": "^4.1.0",
-    "smartpath": "^3.2.5",
-    "smartstring": "^2.0.22",
-    "typings-global": "^1.0.14"
+    "@pushrocks/smartfile": "^7.0.2",
+    "@pushrocks/smartpath": "^4.0.1",
+    "@pushrocks/smartpromise": "^3.0.2",
+    "@pushrocks/smartshell": "^2.0.23",
+    "@pushrocks/smartstring": "^3.0.10",
+    "@types/minimatch": "^3.0.3",
+    "@types/nodegit": "^0.24.8",
+    "nodegit": "^0.24.3"
   },
   "devDependencies": {
-    "@types/should": "^8.1.30",
-    "npmts-g": "^5.2.8",
-    "should": "^11.1.1",
-    "typings-test": "^1.0.3"
-  }
+    "@gitzone/tsbuild": "^2.1.11",
+    "@gitzone/tstest": "^1.0.24",
+    "@pushrocks/tapbundle": "^3.0.9",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "private": false,
+  "files": [
+    "ts/*",
+    "ts_web/*",
+    "dist/*",
+    "dist_web/*",
+    "assets/*",
+    "cli.js",
+    "npmextra.json",
+    "readme.md"
+  ]
 }
