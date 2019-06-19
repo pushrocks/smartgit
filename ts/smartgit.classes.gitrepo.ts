@@ -17,7 +17,7 @@ export class GitRepo {
     return new GitRepo(ngRespository);
   }
 
-  public static async  createNewRepoInDir(dirArg: string): Promise<GitRepo> {
+  public static async createNewRepoInDir(dirArg: string): Promise<GitRepo> {
     dirArg = plugins.path.resolve(dirArg);
     const ngRepository = await plugins.nodegit.Repository.init(dirArg, 0);
     return new GitRepo(ngRepository);
