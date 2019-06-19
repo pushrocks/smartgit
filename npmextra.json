@@ -5,9 +5,9 @@
     "coverageTreshold": 71
   },
   "npmci": {
-    "globalNpmTools": [
-      "npmts"
-    ]
+    "npmGlobalTools": [],
+    "npmAccessLevel": "public"
+
   },
   "gitzone": {
     "module": {
