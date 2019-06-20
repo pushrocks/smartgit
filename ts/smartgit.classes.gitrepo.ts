@@ -8,7 +8,7 @@ export class GitRepo {
   /**
    * creates a new GitRepo Instance after cloning a project
    */
-  public static async createRepoFromClone(fromArg: string, toArg: string): Promise<GitRepo> {
+  public static async fromCloningIntoDir(fromArg: string, toArg: string): Promise<GitRepo> {
     const dirArg = plugins.path.resolve(toArg);
     const ngRespository = await plugins.nodegit.Clone.clone(fromArg, toArg, {
       bare: 0,
@@ -17,13 +17,13 @@ export class GitRepo {
     return new GitRepo(ngRespository);
   }
 
-  public static async createNewRepoInDir(dirArg: string): Promise<GitRepo> {
+  public static async fromCreatingRepoInDir(dirArg: string): Promise<GitRepo> {
     dirArg = plugins.path.resolve(dirArg);
     const ngRepository = await plugins.nodegit.Repository.init(dirArg, 0);
     return new GitRepo(ngRepository);
   }
 
-  public static async openRepoAt(dirArg: string) {
+  public static async fromOpeningRepoDir(dirArg: string) {
     dirArg = plugins.path.resolve(dirArg);
     const ngRepository = await plugins.nodegit.Repository.open(dirArg);
     return new GitRepo(ngRepository);
