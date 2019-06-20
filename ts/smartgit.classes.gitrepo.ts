@@ -42,13 +42,27 @@ export class GitRepo {
   public async listRemotes(): Promise<string[]> {
     return this.nodegitRepo.getRemotes();
   }
+  public async ensureRemote(remoteNameArg: string, remoteUrlArg: string): Promise<void> {
+    const existingUrl = await this.getUrlForRemote(remoteNameArg);
+    if (existingUrl === remoteUrlArg) {
+      return;
+    }
+    if (existingUrl) {
+      await plugins.nodegit.Remote.delete(this.nodegitRepo, remoteNameArg);
+    }
+    await plugins.nodegit.Remote.create(this.nodegitRepo, remoteNameArg, remoteUrlArg);
+  }
 
   /**
    * gets the url for a specific remote
    */
-  public async getUrlForRemote(remoteName: string) {
+  public async getUrlForRemote(remoteName: string): Promise<string> {
     const ngRemote = await this.nodegitRepo.getRemote(remoteName);
-    return ngRemote.url;
+    if (ngRemote) {
+      return ngRemote.url();
+    } else {
+      return null;
+    }
   }
 
   public async pushBranchToRemote(branchName: string, remoteName: string) {
