@@ -42,6 +42,12 @@ export class GitRepo {
   public async listRemotes(): Promise<string[]> {
     return this.nodegitRepo.getRemotes();
   }
+
+  /**
+   * ensures the existance of a remote within a repository
+   * @param remoteNameArg
+   * @param remoteUrlArg 
+   */
   public async ensureRemote(remoteNameArg: string, remoteUrlArg: string): Promise<void> {
     const existingUrl = await this.getUrlForRemote(remoteNameArg);
     if (existingUrl === remoteUrlArg) {
