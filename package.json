@@ -6,7 +6,7 @@
   "typings": "dist_ts/index.d.ts",
   "scripts": {
     "test": "(tstest test/)",
-    "build": "(tsbuild)"
+    "build": "(tsbuild --web)"
   },
   "repository": {
     "type": "git",
