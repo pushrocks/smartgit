@@ -39,7 +39,7 @@ export class GitRepo {
   /**
    * lists remotes
    */
-  public async listRemotes(): Promise<string[]> {
+  public async listRemotes(): Promise<plugins.nodegit.Remote[]> {
     return this.nodegitRepo.getRemotes();
   }
 

@@ -24,20 +24,20 @@
   },
   "homepage": "https://gitlab.com/pushrocks/smartgit",
   "dependencies": {
-    "@pushrocks/smartfile": "^7.0.4",
-    "@pushrocks/smartpath": "^4.0.1",
-    "@pushrocks/smartpromise": "^3.0.2",
-    "@pushrocks/smartshell": "^2.0.23",
-    "@pushrocks/smartstring": "^3.0.10",
+    "@pushrocks/smartfile": "^8.0.0",
+    "@pushrocks/smartpath": "^4.0.3",
+    "@pushrocks/smartpromise": "^3.0.6",
+    "@pushrocks/smartshell": "^2.0.26",
+    "@pushrocks/smartstring": "^3.0.18",
     "@types/minimatch": "^3.0.3",
-    "@types/nodegit": "^0.24.10",
-    "nodegit": "^0.25.1"
+    "@types/nodegit": "^0.26.7",
+    "nodegit": "^0.27.0"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.17",
-    "@gitzone/tstest": "^1.0.24",
-    "@pushrocks/tapbundle": "^3.0.13",
-    "tslint": "^5.19.0",
+    "@gitzone/tsbuild": "^2.1.25",
+    "@gitzone/tstest": "^1.0.44",
+    "@pushrocks/tapbundle": "^3.2.9",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0"
   },
   "private": false,
