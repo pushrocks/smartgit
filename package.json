@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/smartgit",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "smart wrapper for nodegit",
   "main": "dist_ts/index.js",
   "typings": "dist_ts/index.d.ts",
