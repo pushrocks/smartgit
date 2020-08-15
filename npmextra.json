@@ -7,7 +7,6 @@
   "npmci": {
     "npmGlobalTools": [],
     "npmAccessLevel": "public"
-
   },
   "gitzone": {
     "projectType": "npm",

@@ -12,7 +12,7 @@ export class GitRepo {
     const dirArg = plugins.path.resolve(toArg);
     const ngRespository = await plugins.nodegit.Clone.clone(fromArg, toArg, {
       bare: 0,
-      checkoutBranch: 'master'
+      checkoutBranch: 'master',
     });
     return new GitRepo(ngRespository);
   }
@@ -46,7 +46,7 @@ export class GitRepo {
   /**
    * ensures the existance of a remote within a repository
    * @param remoteNameArg
-   * @param remoteUrlArg 
+   * @param remoteUrlArg
    */
   public async ensureRemote(remoteNameArg: string, remoteUrlArg: string): Promise<void> {
     const existingUrl = await this.getUrlForRemote(remoteNameArg);
